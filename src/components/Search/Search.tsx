@@ -1,8 +1,12 @@
 import { ChangeEvent, FC, FormEvent, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 
+import { useGitHub } from '@/hooks/useGitHub';
+
 const Search: FC = () => {
   const [name, setName] = useState('');
+
+  const { loadUser } = useGitHub();
 
   const handleChangeName = (event: ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
@@ -10,6 +14,9 @@ const Search: FC = () => {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    loadUser(name);
+    setName('');
   };
 
   return (
