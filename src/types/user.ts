@@ -21,6 +21,7 @@ export interface IUser {
   followers: number;
   following: number;
   created_at: string;
+  repos_url: string;
   subscriptions_url: string;
   updated_at: string;
   url: string;
