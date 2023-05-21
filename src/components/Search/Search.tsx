@@ -20,7 +20,7 @@ const Search: FC = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit} className="mt-2">
+    <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3">
         <Form.Label>Username</Form.Label>
         <Form.Control placeholder="Enter username" name="name" value={name} onChange={handleChangeName} />
