@@ -11,20 +11,17 @@ const UserCard: FC = () => {
   }
 
   return (
-    <Card className="mb-3 mt-3 p-3">
+    <Card className="mb-3 mt-3 p-3" style={{ maxWidth: 720 }}>
       <Row className="justify-content-center">
-        <Col xs="12" lg="6">
+        <Col xs="12" md="6">
           <Image className="w-100 rounded-3" src={user.avatar_url} />
         </Col>
-        <Col xs="12" lg="6">
-          <div className="d-flex flex-nowrap">
-            <div className="fw-bold">Name:</div>
-            <div>{user.name}</div>
-          </div>
-          <div className="d-flex flex-nowrap">
-            <div className="fw-bold">City:</div>
-            <div>{user.location}</div>
-          </div>
+        <Col xs="12" md="6">
+          <Card.Title>{user.name}</Card.Title>
+          <p className="fw-bold">City: {user.location ?? '-'}</p>
+          <p className="fw-bold">Email: {user.email ?? '-'}</p>
+          <p className="fw-bold">Company: {user.company ?? '-'}</p>
+          <p className="fw-bold">Bio: {user.bio ?? '-'}</p>
         </Col>
       </Row>
     </Card>
