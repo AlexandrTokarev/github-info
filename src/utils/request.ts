@@ -7,10 +7,12 @@ interface Response<T> {
 }
 
 function formatError(error: any): Response<null> {
+  const errorMessage = error.response.data?.message || error.message || 'An error occurred';
+
   return {
     data: null,
     status: error.response ? error.response.status : 500,
-    error: error.message || 'An error occurred',
+    error: errorMessage,
   };
 }
 

@@ -1,4 +1,5 @@
 import { createContext, FC, PropsWithChildren, useCallback, useMemo, useState } from 'react';
+import { toast } from 'react-toastify';
 
 import { GitHubApi } from '@/services/github';
 import { IUser } from '@/types/user';
@@ -20,8 +21,7 @@ export const GitHubProvider: FC<PropsWithChildren> = ({ children }) => {
     if (status === 200 && data) {
       setRepos({ isLoading: false, list: data });
     } else {
-      // TODO: Show notify
-      console.error(error);
+      toast.error(error);
     }
   }, []);
 
@@ -33,8 +33,7 @@ export const GitHubProvider: FC<PropsWithChildren> = ({ children }) => {
         setUser(data);
         loadUserRepos(data);
       } else {
-        // TODO: Show notify
-        console.error(error);
+        toast.error(error);
       }
     },
     [loadUserRepos]
