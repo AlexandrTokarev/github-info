@@ -32,4 +32,4 @@ const Search: FC = () => {
   );
 };
 
-export default Search;
+export { Search };

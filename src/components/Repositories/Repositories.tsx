@@ -1,7 +1,8 @@
-import { FC, useMemo } from 'react';
+import { type FC, useMemo } from 'react';
 import { Accordion, Spinner } from 'react-bootstrap';
 
 import { useGitHub } from '@/hooks/useGitHub';
+import { RepositoryInfo } from '../RepositoryInfo/RepositoryInfo';
 
 const Repositories: FC = () => {
   const { user, repos } = useGitHub();
@@ -22,7 +23,9 @@ const Repositories: FC = () => {
         {list.map((repo) => (
           <Accordion.Item key={repo.id} eventKey={String(repo.id)}>
             <Accordion.Header>{repo.name}</Accordion.Header>
-            <Accordion.Body>Body</Accordion.Body>
+            <Accordion.Body>
+              <RepositoryInfo repo={repo} />
+            </Accordion.Body>
           </Accordion.Item>
         ))}
       </Accordion>
@@ -30,4 +33,4 @@ const Repositories: FC = () => {
   );
 };
 
-export default Repositories;
+export { Repositories };

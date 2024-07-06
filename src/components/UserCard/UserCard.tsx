@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import { Card, Col, Image, Row } from 'react-bootstrap';
 
 import { useGitHub } from '@/hooks/useGitHub';
@@ -28,4 +28,4 @@ const UserCard: FC = () => {
   );
 };
 
-export default UserCard;
+export { UserCard };

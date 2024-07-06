@@ -1,7 +1,9 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
-const RepositoryInfo: FC = () => {
-  return <div>Info</div>
+import type { RepositoryInfoProps } from './RepositoryInfo.types';
+
+const RepositoryInfo: FC<RepositoryInfoProps> = ({ repo }) => {
+  return <div>{repo.name}</div>
 };
 
 export { RepositoryInfo };

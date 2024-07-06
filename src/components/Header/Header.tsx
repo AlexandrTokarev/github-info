@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import { Navbar } from 'react-bootstrap';
 
 const Header: FC = () => {
@@ -9,4 +9,4 @@ const Header: FC = () => {
   );
 };
 
-export default Header;
+export { Header };
