@@ -18,11 +18,11 @@ function formatError(error: any): Response<null> {
 
 export const request = async <T>(config: AxiosRequestConfig): Promise<Response<T>> => {
   try {
-    const response = await axios(config);
+    const { data, status } = await axios(config);
 
     return {
-      data: response.data,
-      status: response.status,
+      data,
+      status,
       error: null,
     };
   } catch (error) {
