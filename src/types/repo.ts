@@ -60,7 +60,7 @@ export interface IRepo {
   allow_forking: boolean;
   is_template: boolean;
   web_commit_signoff_required: boolean;
-  topics: Array<any>;
+  topics: Array<unknown>;
   visibility: string;
   forks: number;
   open_issues: number;

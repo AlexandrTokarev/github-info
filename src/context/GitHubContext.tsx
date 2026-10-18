@@ -36,7 +36,7 @@ export const GitHubProvider: FC<PropsWithChildren> = ({ children }) => {
         toast.error(error);
       }
     },
-    [loadUserRepos]
+    [loadUserRepos],
   );
 
   const value = useMemo<IGitHubContext>(
@@ -45,7 +45,7 @@ export const GitHubProvider: FC<PropsWithChildren> = ({ children }) => {
       loadUser,
       repos,
     }),
-    [loadUser, repos, user]
+    [loadUser, repos, user],
   );
 
   return <GitHubContext.Provider value={value}>{children}</GitHubContext.Provider>;

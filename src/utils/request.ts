@@ -6,6 +6,7 @@ interface Response<T> {
   error: string | null;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function formatError(error: any): Response<null> {
   const errorMessage = error.response.data?.message || error.message || 'An error occurred';
 
